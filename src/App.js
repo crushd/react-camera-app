@@ -21,6 +21,10 @@ function App() {
       });
   };
 
+  useEffect(() => {
+    getVideo();
+  }, [videoRef]);
+
   return <div className="App">Hello World</div>;
 }
 
