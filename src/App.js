@@ -47,7 +47,18 @@ function App() {
     getVideo();
   }, [videoRef]);
 
-  return <div className="App">Hello World</div>;
+  return (
+    <div className="App">
+      <div className="camera">
+        <video ref={videoRef}></video>
+        <button onClick={takePhoto}>SNAP!</button>
+      </div>
+      <div className={"result " + (hasPhoto ? "hasPhoto" : "")}>
+        <canvas ref={photoRef}></canvas>
+        <button onClick={closePhoto}>CLOSE!</button>
+      </div>
+    </div>
+  );
 }
 
 export default App;
